@@ -105,45 +105,5 @@
         </div>
     </form>
 
-    <script>
-        document.getElementById("studentForm").onsubmit = function(event) {
-            var firstName = document.getElementById("firstName").value;
-            var lastName = document.getElementById("lastName").value;
-            var contact = document.getElementById("contact").value;
-            var pincode = document.getElementById("pincode").value;
-            var state = document.getElementById("state").value;
-            var country = document.getElementById("country").value;
-            var dob = document.getElementById("dob").value;
-            
-            if (firstName === "") {
-                alert("First Name cannot be empty");
-                event.preventDefault();
-            }
-            if (lastName === "") {
-                alert("Last Name cannot be empty");
-                event.preventDefault();
-            }
-            if (isNaN(contact) || contact.length !== 10) {
-                alert("Contact number must be exactly 10 digits and contain only numbers.");
-                event.preventDefault();
-            }
-            if (pincode === "") {
-                alert("Pin Code cannot be empty");
-                event.preventDefault();
-            }
-            if (state === "") {
-                alert("State cannot be empty");
-                event.preventDefault();
-            }
-            if (country === "") {
-                alert("Country cannot be empty");
-                event.preventDefault();
-            }
-            if (dob === "") {
-                alert("Date of Birth cannot be empty");
-                event.preventDefault();
-            }
-        };
-    </script>
 </body>
 </html>
