@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Details Form</title>
+<style>
+    body {
+        background-color: orange;
+        font-family: Arial, sans-serif;
+    }
+    h1 {
+        background-color: lightpink;
+        text-align: center;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    form {
+        background: white;
+        padding: 20px;
+        width: 50%;
+        margin: auto;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px gray;
+    }
+    label {
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+    }
+    input, select, textarea {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .buttons {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .buttons input {
+        width: 45%;
+        cursor: pointer;
+        background: lightblue;
+        border: none;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+    .buttons input:hover {
+        background: deepskyblue;
+    }
+    .gender-container {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+</style>
+</head>
+<body>
+    <h1>STUDENT FORM</h1>
+    <form id="studentForm">
+        <label>First Name:</label>
+        <input type="text" id="firstName" required>
+
+        <label>Last Name:</label>
+        <input type="text" id="lastName" required>
+
+        <label>Gender:</label>
+        <div class="gender-container">
+            <input type="radio" name="gender" value="Male"> Male
+            <input type="radio" name="gender" value="Female"> Female
+        </div>
+
+        <label>Subject of Interest:</label>
+        <select id="Subjects">
+            <option value="Mathematics">Mathematics</option>
+            <option value="Physics">Physics</option>
+            <option value="Chemistry">Chemistry</option>
+        </select>
+
+        <label>Languages Known:</label>
+        <input type="text" id="languages">
+
+        <label>Date of Birth (dd-mm-yyyy):</label>
+        <input type="text" id="dob" placeholder="dd-mm-yyyy">
+
+        <label>Contact No:</label>
+        <input type="tel" id="contact" required>
+
+        <label>Address:</label>
+        <textarea id="address" rows="3"></textarea>
+
+        <label>Pin Code:</label>
+        <input type="text" id="pincode" required>
+
+        <label>State:</label>
+        <input type="text" id="state" required>
+
+        <label>Country:</label>
+        <input type="text" id="country" required>
+
+        <div class="buttons">
+            <input type="reset" value="Reset">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+
+    <script>
+        document.getElementById("studentForm").onsubmit = function(event) {
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var contact = document.getElementById("contact").value;
+            var pincode = document.getElementById("pincode").value;
+            var state = document.getElementById("state").value;
+            var country = document.getElementById("country").value;
+            var dob = document.getElementById("dob").value;
+            
+            if (firstName === "") {
+                alert("First Name cannot be empty");
+                event.preventDefault();
+            }
+            if (lastName === "") {
+                alert("Last Name cannot be empty");
+                event.preventDefault();
+            }
+            if (isNaN(contact) || contact.length !== 10) {
+                alert("Contact number must be exactly 10 digits and contain only numbers.");
+                event.preventDefault();
+            }
+            if (pincode === "") {
+                alert("Pin Code cannot be empty");
+                event.preventDefault();
+            }
+            if (state === "") {
+                alert("State cannot be empty");
+                event.preventDefault();
+            }
+            if (country === "") {
+                alert("Country cannot be empty");
+                event.preventDefault();
+            }
+            if (dob === "") {
+                alert("Date of Birth cannot be empty");
+                event.preventDefault();
+            }
+        };
+    </script>
+</body>
+</html>
